@@ -19,8 +19,14 @@ public class Menu {
      * Creates an empty menu: initialize the array with capacity 10
      * and the counter with 0.
      */
-    public Menu() {
-        throw new UnsupportedOperationException("Not implemented yet");
+
+    private String[] Menu = new String[10];
+    private int count;
+
+    public Menu(String[] Menu, int capacity, int count) {
+        this.Menu = Menu;
+        capacity = 10;
+        count = 0;
     }
 
     /**
@@ -29,8 +35,11 @@ public class Menu {
      *
      * @param item the menu item to add
      */
-    public void addMenuItem(MenuItem item) {
-        throw new UnsupportedOperationException("Not implemented yet");
+    public void addMenuItem(MenuItem item, int count, String Tambah) {
+        if (count < 10) {
+            Menu[count] = Tambah;
+            count++;
+        }
     }
 
     /**
@@ -39,11 +48,16 @@ public class Menu {
      * @param name item name to look for
      * @return the matching MenuItem, or {@code null} when not found
      */
-    public MenuItem findItem(String name) {
-        throw new UnsupportedOperationException("Not implemented yet");
+    public MenuItem findItem(MenuItem name, String[] Menu) {
+        for (int i = 0; i < Menu.length; i++) {
+            if (Menu[i].equals(name)) {
+                return name;
+            }
+        }
+        return null;
     }
 
     public int getItemCount() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return count;
     }
 }
